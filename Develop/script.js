@@ -1,3 +1,4 @@
+var currentDate = moment().format('MMMM Do YYYY, h:mm:ss a');
 var currentHour = moment().format('LT');
 
 var workHours = [
@@ -39,6 +40,10 @@ var workHours = [
     }
 ]
 
+function displayDate () {
+    $("#currentDay").text(currentDate);
+}
+
 function pastPresentFuture() {
 
     for (var i = 0; i < workHours.length; i++) {
@@ -55,4 +60,5 @@ function pastPresentFuture() {
     }
 }
 
+displayDate();
 pastPresentFuture()
