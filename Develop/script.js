@@ -40,6 +40,18 @@ var workHours = [
     }
 ]
 
+var events = {
+    eventNineOClock: [],
+    eventTenOClock: [],
+    eventElevenOClock: [],
+    eventTwelveOClock: [],
+    eventOneOClock: [],
+    eventTwoOClock: [],
+    eventThreeOClock: [],
+    eventFourOClock: [],
+    eventFiveOClock: []
+};
+
 function displayDate () {
     $("#currentDay").text(currentDate);
 }
@@ -59,6 +71,92 @@ function pastPresentFuture() {
 
     }
 }
+
+function saveEvent() {
+    localStorage.setItem("events", JSON.stringify(events));
+}
+
+$("#btn-9").on("click", function() {
+    var eventText = $("#9").val();
+    if (eventText) {
+        events.eventNineOClock.push({
+           event: eventText
+        });
+        saveEvent();
+    } 
+});
+$("#btn-10").on("click", function() {
+    var eventText = $("#10").val();
+    if (eventText) {
+        events.eventTenOClock.push({
+           event: eventText
+        });
+        saveEvent();
+    } 
+});
+$("#btn-11").on("click", function() {
+    var eventText = $("#11").val();
+    if (eventText) {
+        events.eventElevenOClock.push({
+           event: eventText
+        });
+        saveEvent();
+    } 
+});
+$("#btn-12").on("click", function() {
+    var eventText = $("#12").val();
+    if (eventText) {
+        events.eventTwelveOClock.push({
+           event: eventText
+        });
+        saveEvent();
+    } 
+});
+$("#btn-1").on("click", function() {
+    var eventText = $("#1").val();
+    if (eventText) {
+        events.eventOneOClock.push({
+           event: eventText
+        });
+        saveEvent();
+    } 
+});
+$("#btn-2").on("click", function() {
+    var eventText = $("#2").val();
+    if (eventText) {
+        events.eventTwoOClock.push({
+           event: eventText
+        });
+        saveEvent();
+    } 
+});
+$("#btn-3").on("click", function() {
+    var eventText = $("#3").val();
+    if (eventText) {
+        events.eventThreeOClock.push({
+           event: eventText
+        });
+        saveEvent();
+    } 
+});
+$("#btn-4").on("click", function() {
+    var eventText = $("#4").val();
+    if (eventText) {
+        events.eventFourOClock.push({
+           event: eventText
+        });
+        saveEvent();
+    } 
+});
+$("#btn-5").on("click", function() {
+    var eventText = $("#5").val();
+    if (eventText) {
+        events.eventFiveOClock.push({
+           event: eventText
+        });
+        saveEvent();
+    } 
+});
 
 displayDate();
 pastPresentFuture()
