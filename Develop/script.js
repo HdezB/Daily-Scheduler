@@ -1,6 +1,7 @@
 var currentDate = moment().format('MMMM Do YYYY, h:mm:ss a');
 var currentHour = moment().format('LT');
 
+//Assigns the specific time of each timeblock
 var workHours = [
     {
         dueTime: $("#9"),
@@ -40,6 +41,7 @@ var workHours = [
     }
 ]
 
+//Obect of arrays where each timeblock event will be store for localSotrage
 var events = {
     eventNineOClock: [],
     eventTenOClock: [],
@@ -52,10 +54,12 @@ var events = {
     eventFiveOClock: []
 };
 
+//Displays the current date on the top of the page using moment().
 function displayDate () {
     $("#currentDay").text(currentDate);
 }
 
+//Iterates through the loop to match each timeblock's time with the actual current one.
 function pastPresentFuture() {
 
     for (var i = 0; i < workHours.length; i++) {
@@ -72,10 +76,12 @@ function pastPresentFuture() {
     }
 }
 
+//Saves each user event input to localStorage.
 function saveEvent() {
     localStorage.setItem("events", JSON.stringify(events));
 }
 
+//For every timeblock event that the user submits its going to be saved in the localStorage
 $("#btn-9").on("click", function() {
     var eventText = $("#9").val();
     if (eventText) {
